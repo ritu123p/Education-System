@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+    <table border="solid">
+        <tr>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Mobile</th>
+            <th>Password</th>
+            {% comment %} <th>Role</th> {% endcomment %}
+            <th>Action</th>
+        </tr>
+        {% for data in user %}
+        <form method="post">
+            {% csrf_token %}
+            <tr>
+                <td>{{data.username}}</td>
+                <td>{{data.email}}</td>
+                <td>{{data.mobile}}</td>
+                <td>{{data.password}}</td>
+                <td>
+                    <input type="email" name="email" value="{{data.email}}" hidden>
+                    <input type="submit" name="btn" value="Edit">
+                    <input type="submit" name="btn" value="Delete">
+                </td>
+            </tr>
+        </form>
+        {% endfor %}
+    </table>
+  
+</body>
+</html>

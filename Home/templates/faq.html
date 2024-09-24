@@ -1,0 +1,75 @@
+{% extends 'layout/base.html'%}
+{% block content%}
+
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            margin-top:100px;
+        }
+        h2 {
+            text-align: center;
+        }
+        .question {
+            font-weight: bold;
+            margin: 10px;
+            cursor: pointer;
+        }
+        .answer {
+            margin-bottom: 20px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+            <div class="question">Q: What is your name?</div>
+            <div class="answer">A: My name is Rituparna Behura</div>
+        </div>
+        <div class="faq-item">
+            <div class="question">Q: What are you studying?</div>
+            <div class="answer">A: I am pursuing BTech 3rd year.</div>
+        </div>
+        <div class="faq-item">
+            <div class="question">Q: Where are you from?</div>
+            <div class="answer">A: I am from Kendrapara.</div>
+        </div>
+        <!-- Add more FAQ items as needed -->
+    </div>
+
+    <script>
+        // JavaScript for toggling FAQ answers
+        document.addEventListener("DOMContentLoaded", function() {
+            const questions = document.querySelectorAll(".question");
+
+            questions.forEach(question => {
+                question.addEventListener("click", function() {
+                    const answer = this.nextElementSibling;
+                    answer.style.display = answer.style.display === "block" ? "none" : "block";
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+
+{% endblock%}

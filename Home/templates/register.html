@@ -1,0 +1,48 @@
+{% extends 'layout/base.html'%}
+{% block content%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration</title>
+    {% load static%}
+    <link rel="stylesheet" href="{% static "css/login.css"%}">
+</head>
+<body>
+    <div class="container">
+        <h2>User Registration</h2>
+        <form  method="post">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="mobNumber">Mobile Number:</label>
+            <input type="text" id="number" name="mobile" required>
+
+        </br>
+            
+        <label for="role">Role:</label>
+            <select name="role">
+                <option value="student">Student</option>
+                <option value="faculty">Faculty</option>
+                <option value="admin">admin</option>
+                <option value="other">Other</option>
+            </select>
+            
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            
+            {% comment %} <label for="confirm_password">Confirm Password:</label>
+            <input type="password" id="confirm_password" name="confirm_password" required> {% endcomment %}
+            
+            <input type="submit" value="Register">
+            {% csrf_token %}
+        </form>
+    </div>
+    {{output}}
+</body>
+</html>
+{% endblock%}

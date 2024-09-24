@@ -1,0 +1,12 @@
+{% for data in data1 %}
+<form method="post" action="update">
+    name <input type="text" name="name" value="{{data.name}}">
+    <br>
+    mobile <input type="text" name="mobile" value="{{data.mobile}}">
+    <br>
+    email <input type="text" name="email" value="{{data.email}}">
+    <br>
+    <input type="submit" name="btn" value="update">
+    {% csrf_token %}
+</form>
+{% endfor %}
