@@ -1,0 +1,38 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="{% static ""%}">
+</head>
+<body>
+    <h1>Welcome to admin home</h1>
+    <h1>Welcome {{ user.name }}</h1>
+    <table border="solid">
+        <tr>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Mobile</th>
+            <th>Password</th>
+            <th>Role</th>
+            <th>Action</th>
+        </tr>
+        {% for data in user %}
+        <tr>
+            <td>{{data.username}}</td>
+            <td>{{data.email}}</td>
+            <td>{{data.mobile}}</td>
+            <td>{{data.password}}</td>
+            <td>{{data.role}}</td>
+            <td>
+                <input type="submit" name="btn" value="Edit">
+                <input type="submit" name="btn" value="Delete">
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+  
+</body>
+</html>

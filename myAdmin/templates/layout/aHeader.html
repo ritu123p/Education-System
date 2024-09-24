@@ -1,0 +1,77 @@
+{% load static%}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transparent Navbar</title>
+  {% load static%}
+</head>
+<body>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+    
+    .navbar {
+      background-color: rgba(0, 0, 0, 0.5); /* Adjust the alpha value for transparency */
+      color: white;
+      padding: 20px 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+    }
+    
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    .nav-links {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .nav-links li {
+      display: inline;
+      margin-left: 20px;
+    }
+    
+    .nav-links li a {
+      color: white;
+      text-decoration: none;
+    }
+    
+    .content {
+      margin-top: 100px; /* Adjust according to your navbar height */
+      padding: 20px;
+    }
+
+  
+    
+  </style>
+  <nav class="navbar">
+    <div class="container">
+      <h1>Admin</h1>
+      <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Gallery</a></li>
+        <li><a href="#">FAQs</a></li>
+        <li><a href="#">Profile</a></li>
+      </ul>
+    </div>
+  </nav>
+</body>
+</html>
